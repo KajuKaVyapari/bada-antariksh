@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/space/planet_4.png" type="Texture" id=1]
+[ext_resource path="res://scenes/space/planets/planet.tscn" type="PackedScene" id=2]
+
+[node name="planet_4" instance=ExtResource( 2 )]
+
+[node name="planet_sprite" parent="." index="0"]
+texture = ExtResource( 1 )
