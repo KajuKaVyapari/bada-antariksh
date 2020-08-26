@@ -4,6 +4,7 @@
 [ext_resource path="res://scenes/space/planets/planet.tscn" type="PackedScene" id=2]
 
 [node name="planet_4" instance=ExtResource( 2 )]
+color = Color( 0.501961, 0.717647, 0.729412, 1 )
 
 [node name="planet_sprite" parent="." index="0"]
 texture = ExtResource( 1 )

@@ -4,6 +4,7 @@
 [ext_resource path="res://sprites/space/planet_5.png" type="Texture" id=2]
 
 [node name="planet_5" instance=ExtResource( 1 )]
+color = Color( 0, 0.341176, 0.658824, 1 )
 
 [node name="planet_sprite" parent="." index="0"]
 texture = ExtResource( 2 )

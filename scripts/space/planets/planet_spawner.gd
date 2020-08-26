@@ -2,8 +2,9 @@ extends Node2D
 
 onready var _planets = $planets
 
-export var spawn_range = 10000
-export var number = 10
+export var spawn_range = 40000
+export var margin = 5000
+export var number = 12
 
 var planet_objects = [
 	preload("res://scenes/space/planets/planet_1.tscn"),
@@ -25,11 +26,29 @@ func _ready() -> void:
 
 func spawn_planets():
 
-	for _j in range(number):
-		planet_locations.append(Vector2(rand_range(-spawn_range, spawn_range), rand_range(-spawn_range, spawn_range)))
+	while true:
+		var proposed_spawn = Vector2(rand_range(-spawn_range, spawn_range), rand_range(-spawn_range, spawn_range))
+		if is_valid(proposed_spawn):
+			planet_locations.push_back(proposed_spawn)
+		if planet_locations.size() == number:
+			break
+
+
+
+
 
 	for planet_location in planet_locations:
 		planets.push_back(planet_objects[randi() % planet_objects.size()].instance())
 		planets[i].global_position = planet_location
 		_planets.add_child(planets[i])
 		i +=1
+
+
+func is_valid(spawn):
+
+	for planet_location in planet_locations:
+		if planet_location.distance_to(spawn) < margin:
+			return false
+	return true
+
+
