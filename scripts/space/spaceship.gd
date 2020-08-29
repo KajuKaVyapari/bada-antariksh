@@ -3,6 +3,7 @@ extends KinematicBody2D
 onready var animator = $spaceship_animator
 onready var particles = $spaceship_particles
 onready var camera = $spaceship_camera
+onready var tween = $spaceship_tween
 
 export var speed = 1000
 
@@ -10,7 +11,9 @@ var direction = Vector2()
 var velocity = Vector2()
 
 var animation
+
 var zooming = false
+var zoom_values = [Vector2(1, 1), Vector2(4, 4)]
 
 
 func _physics_process(_delta: float) -> void:
@@ -35,32 +38,7 @@ func set_animation():
 		animator.play("engine")
 		
 
-func zoom_out_req():
-	if not zooming:
-		zoom_out()
-	else:
-		yield(animator, "animation_finished")
-		zoom_out()
-		
+func zoom(mode):
 
-
-func zoom_out():
-	zooming = true
-	animator.play("zoom")
-	yield(animator, "animation_finished")
-	zooming = false
-
-
-func zoom_in_req():
-	if not zooming:
-		zoom_in()
-	else:
-		yield(animator, "animation_finished")
-		zoom_in()
-
-
-func zoom_in():
-	zooming = true
-	animator.play_backwards("zoom")
-	yield(animator, "animation_finished")
-	zooming = false
+	tween.interpolate_property(camera, "zoom", camera.zoom, zoom_values[mode], 2)
+	tween.start()	

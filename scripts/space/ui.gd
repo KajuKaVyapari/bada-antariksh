@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-export var minimap_zoom = 20
+export var minimap_zoom = 250
 
 onready var space_player = get_tree().get_nodes_in_group("minimap_player")[0]
 onready var space_planets = get_tree().get_nodes_in_group("minimap_planet")
@@ -32,6 +32,6 @@ func _physics_process(_delta: float) -> void:
 	for space_planet in space_planets:
 		minimap_planets[j].get_node("planet").rect_scale = Vector2.ONE * space_planet.scale_multiplier
 		minimap_planets[j].position = (
-			(( space_planet.global_position - ((space_planet.global_position -space_player.global_position).clamped(1024 * space_planet.scale.x / 3) ) - space_player.global_position)  ) / minimap_zoom ).clamped(110)
+			((( space_planet.global_position - space_player.global_position).length() + 5120) * (space_planet.global_position - space_player.global_position).normalized()  ) / minimap_zoom ).clamped(110)
 		j +=1
 	j = 0

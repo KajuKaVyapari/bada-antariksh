@@ -32,7 +32,7 @@ position = Vector2( 1381.83, 853.262 )
 [node name="background" type="ParallaxBackground" parent="."]
 
 [node name="parallax" type="ParallaxLayer" parent="background"]
-motion_scale = Vector2( 0.8, 0.8 )
+motion_scale = Vector2( 0.6, 0.6 )
 motion_mirroring = Vector2( 9600, 5400 )
 
 [node name="background_texture" type="TextureRect" parent="background/parallax"]

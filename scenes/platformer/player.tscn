@@ -1,0 +1,314 @@
+[gd_scene load_steps=72 format=2]
+
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_006.png" type="Texture" id=1]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_003.png" type="Texture" id=2]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_004.png" type="Texture" id=3]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_000.png" type="Texture" id=4]
+[ext_resource path="res://sprites/platformer/player/jump_start/0_golem_jump_start_001.png" type="Texture" id=5]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_003.png" type="Texture" id=6]
+[ext_resource path="res://sprites/platformer/player/jump_loop/0_golem_jump_loop_001.png" type="Texture" id=7]
+[ext_resource path="res://sprites/platformer/player/jump_loop/0_golem_jump_loop_003.png" type="Texture" id=8]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_007.png" type="Texture" id=9]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_009.png" type="Texture" id=10]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_010.png" type="Texture" id=11]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_011.png" type="Texture" id=12]
+[ext_resource path="res://sprites/platformer/player/jump_loop/0_golem_jump_loop_002.png" type="Texture" id=13]
+[ext_resource path="res://sprites/platformer/player/jump_loop/0_golem_jump_loop_005.png" type="Texture" id=14]
+[ext_resource path="res://sprites/platformer/player/jump_loop/0_golem_jump_loop_004.png" type="Texture" id=15]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_002.png" type="Texture" id=16]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_001.png" type="Texture" id=17]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_001.png" type="Texture" id=18]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_002.png" type="Texture" id=19]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_000.png" type="Texture" id=20]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_004.png" type="Texture" id=21]
+[ext_resource path="res://sprites/platformer/player/jump_loop/0_golem_jump_loop_000.png" type="Texture" id=22]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_007.png" type="Texture" id=23]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_001.png" type="Texture" id=24]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_002.png" type="Texture" id=25]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_003.png" type="Texture" id=26]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_005.png" type="Texture" id=27]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_007.png" type="Texture" id=28]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_006.png" type="Texture" id=29]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_008.png" type="Texture" id=30]
+[ext_resource path="res://sprites/platformer/player/jump_start/0_golem_jump_start_004.png" type="Texture" id=31]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_000.png" type="Texture" id=32]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_006.png" type="Texture" id=33]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_008.png" type="Texture" id=34]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_010.png" type="Texture" id=35]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_009.png" type="Texture" id=36]
+[ext_resource path="res://sprites/platformer/player/running/0_golem_running_011.png" type="Texture" id=37]
+[ext_resource path="res://sprites/platformer/player/jump_start/0_golem_jump_start_005.png" type="Texture" id=38]
+[ext_resource path="res://sprites/platformer/player/jump_start/0_golem_jump_start_003.png" type="Texture" id=39]
+[ext_resource path="res://sprites/platformer/player/jump_start/0_golem_jump_start_002.png" type="Texture" id=40]
+[ext_resource path="res://sprites/platformer/player/slashing/0_golem_slashing_005.png" type="Texture" id=41]
+[ext_resource path="res://sprites/platformer/player/jump_start/0_golem_jump_start_000.png" type="Texture" id=42]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_008.png" type="Texture" id=43]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_009.png" type="Texture" id=44]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_010.png" type="Texture" id=45]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_011.png" type="Texture" id=46]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_012.png" type="Texture" id=47]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_013.png" type="Texture" id=48]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_014.png" type="Texture" id=49]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_015.png" type="Texture" id=50]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_017.png" type="Texture" id=51]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_016.png" type="Texture" id=52]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_004.png" type="Texture" id=53]
+[ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_005.png" type="Texture" id=54]
+[ext_resource path="res://scripts/platformer/player.gd" type="Script" id=55]
+[ext_resource path="res://sprites/platformer/player/falling_down/0_golem_falling_down_003.png" type="Texture" id=56]
+[ext_resource path="res://sprites/platformer/player/falling_down/0_golem_falling_down_001.png" type="Texture" id=57]
+[ext_resource path="res://sprites/platformer/player/falling_down/0_golem_falling_down_000.png" type="Texture" id=58]
+[ext_resource path="res://sprites/platformer/player/falling_down/0_golem_falling_down_002.png" type="Texture" id=59]
+[ext_resource path="res://sprites/platformer/player/falling_down/0_golem_falling_down_004.png" type="Texture" id=60]
+[ext_resource path="res://sprites/platformer/player/falling_down/0_golem_falling_down_005.png" type="Texture" id=61]
+[ext_resource path="res://scripts/platformer/player_sword.gd" type="Script" id=62]
+[ext_resource path="res://scripts/platformer/player_state_machine.gd" type="Script" id=63]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 125.583, 264.272 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 2 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 1 ), ExtResource( 23 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "idle",
+"speed": 17.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 5 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 22 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "jump",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 57 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 61 ) ],
+"loop": true,
+"name": "fall",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 9 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "attack",
+"speed": 15.0
+} ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "attack"
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/player_sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "attack" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/player_sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fall"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/player_sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "fall" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/player_sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=5]
+loop = true
+step = 0.0588235
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/player_sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/player_sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0588235, 0.117647, 0.176471, 0.235294, 0.294118, 0.352941, 0.411765, 0.470588, 0.529412, 0.588235, 0.647059, 0.705882, 0.764706, 0.823529, 0.882353, 0.941176, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "jump"
+length = 0.6
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/player_sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "jump" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/player_sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/player_sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "jump" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/player_sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=8]
+loop = true
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/path = NodePath("body/player_sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "run" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("body/player_sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0909091, 0.181818, 0.272727, 0.363636, 0.454545, 0.545455, 0.636364, 0.727273, 0.818182, 0.909091, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+
+[node name="player" type="KinematicBody2D" groups=[
+"player",
+]]
+scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 55 )
+
+[node name="player_state_machine" type="Node" parent="."]
+script = ExtResource( 63 )
+
+[node name="player_collider" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 42.3785 )
+shape = SubResource( 1 )
+
+[node name="body" type="Node2D" parent="."]
+
+[node name="player_sprite" type="AnimatedSprite" parent="body"]
+position = Vector2( 0, -1.41422 )
+frames = SubResource( 2 )
+animation = "attack"
+
+[node name="player_sword" type="Area2D" parent="body"]
+position = Vector2( 116.868, 212.76 )
+script = ExtResource( 62 )
+
+[node name="player_hurtbox" type="CollisionPolygon2D" parent="body/player_sword"]
+polygon = PoolVector2Array( -6.70584, -1.04501, 94.7816, -327.149, 183.917, -293.514, 315.097, -130.38, 326.869, -7.60876 )
+disabled = true
+
+[node name="player_animator" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/attack = SubResource( 3 )
+anims/fall = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/jump = SubResource( 6 )
+anims/jump_loop = SubResource( 7 )
+anims/run = SubResource( 8 )
+
+[node name="raycasts" type="Node2D" parent="."]
+position = Vector2( 0, 299.149 )
+
+[node name="raycast" type="RayCast2D" parent="raycasts"]
+position = Vector2( 129.312, 0 )
+enabled = true
+
+[node name="raycast2" type="RayCast2D" parent="raycasts"]
+position = Vector2( -130.339, 0 )
+enabled = true
+[connection signal="body_entered" from="body/player_sword" to="body/player_sword" method="_on_player_sword_body_entered"]

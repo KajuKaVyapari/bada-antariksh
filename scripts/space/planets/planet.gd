@@ -13,9 +13,9 @@ func _ready() -> void:
 
 func _on_planet_area_body_entered(body):
 	if body.name == "spaceship":
-		player.zoom_out_req()
+		player.zoom(1)
 
 
 func _on_planet_area_body_exited(body):
 	if body.name == "spaceship":
-		player.zoom_in_req()
+		player.zoom(0)
