@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://logo.png" type="Texture" id=1]
+[ext_resource path="res://scripts/scene_changer.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "scene_change"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("anim/anim_texture:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1080 ), Vector2( 1920, 1080 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("anim/anim_texture:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 960, 0 ), Vector2( 0, 0 ) ]
+}
+
+[node name="scene_changer" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="anim" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim_texture" type="TextureRect" parent="anim"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 960.0
+margin_right = -960.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="animator" type="AnimationPlayer" parent="."]
+anims/scene_change = SubResource( 1 )

@@ -31,7 +31,7 @@ func apply_movement():
 	if not direction == 0:
 		velocity.x = lerp(velocity.x, direction * speed, acceleration)
 	else:
-		velocity.x = lerp(velocity.x, direction * speed, 0.5)
+		velocity.x = lerp(velocity.x, direction * speed, 1)
 	velocity = move_and_slide(velocity, Vector2.UP, slope_stop)
 
 
@@ -46,3 +46,23 @@ func check_is_grounded():
 		if raycast.is_colliding() and not raycast.get_collider().is_in_group("player"):
 			return true
 	return false
+
+
+func die():
+	queue_free()
+	scene_changer.change_scene("res://scenes/space/space.tscn")
+
+
+func _on_player_hitbox_body_entered(enemy_body: Node) -> void:
+	if body.is_in_group("enemies"):
+		die()
+
+
+func _on_player_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("coins"):
+		increase_score()
+		area.queue_free()
+		
+
+func increase_score():
+	global.score += 1

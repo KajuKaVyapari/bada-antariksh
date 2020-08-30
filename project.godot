@@ -24,6 +24,12 @@ config/name="Bada Soch Space Game"
 run/main_scene="res://scenes/space/space.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+platformer_movement="*res://scripts/platformer/platformer_movement.gd"
+scene_changer="*res://scenes/scene_changer.tscn"
+global="*res://scripts/global.gd"
+
 [display]
 
 window/size/width=1920

@@ -4,7 +4,6 @@ onready var _planets = $planets
 
 export var spawn_range = 40000
 export var margin = 5000
-export var number = 12
 
 var planet_objects = [
 	preload("res://scenes/space/planets/planet_1.tscn"),
@@ -30,11 +29,8 @@ func spawn_planets():
 		var proposed_spawn = Vector2(rand_range(-spawn_range, spawn_range), rand_range(-spawn_range, spawn_range))
 		if is_valid(proposed_spawn):
 			planet_locations.push_back(proposed_spawn)
-		if planet_locations.size() == number:
+		if planet_locations.size() == global.planets:
 			break
-
-
-
 
 
 	for planet_location in planet_locations:

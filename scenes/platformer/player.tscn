@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_006.png" type="Texture" id=1]
 [ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_003.png" type="Texture" id=2]
@@ -67,16 +67,20 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 125.583, 264.272 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 177.158
+height = 268.127
+
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 2 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 1 ), ExtResource( 23 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 51 ) ],
 "loop": true,
 "name": "idle",
 "speed": 17.0
 }, {
-"frames": [ ExtResource( 42 ), ExtResource( 5 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 22 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 9 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "jump",
+"name": "attack",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 37 ) ],
@@ -89,14 +93,13 @@ animations = [ {
 "name": "fall",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 9 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 42 ), ExtResource( 5 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 22 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "attack",
+"name": "jump",
 "speed": 15.0
 } ]
 
-[sub_resource type="Animation" id=3]
-resource_name = "attack"
+[sub_resource type="Animation" id=4]
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/player_sprite:animation")
@@ -123,8 +126,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "fall"
+[sub_resource type="Animation" id=5]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("body/player_sprite:animation")
@@ -151,7 +153,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 loop = true
 step = 0.0588235
 tracks/0/type = "value"
@@ -179,8 +181,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "jump"
+[sub_resource type="Animation" id=7]
 length = 0.6
 step = 0.0666667
 tracks/0/type = "value"
@@ -208,7 +209,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -236,7 +237,7 @@ tracks/1/keys = {
 "values": [ 6, 7, 8, 9, 10, 11 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 loop = true
 step = 0.0666667
 tracks/0/type = "value"
@@ -273,15 +274,25 @@ script = ExtResource( 55 )
 [node name="player_state_machine" type="Node" parent="."]
 script = ExtResource( 63 )
 
+[node name="player_camera" type="Camera2D" parent="."]
+current = true
+
 [node name="player_collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 42.3785 )
 shape = SubResource( 1 )
+
+[node name="player_hitbox" type="Area2D" parent="."]
+scale = Vector2( 1, 1 )
+
+[node name="player_hitbox_collider" type="CollisionShape2D" parent="player_hitbox"]
+position = Vector2( 0, 38.6492 )
+shape = SubResource( 2 )
 
 [node name="body" type="Node2D" parent="."]
 
 [node name="player_sprite" type="AnimatedSprite" parent="body"]
 position = Vector2( 0, -1.41422 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "attack"
 
 [node name="player_sword" type="Area2D" parent="body"]
@@ -294,12 +305,12 @@ disabled = true
 
 [node name="player_animator" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/attack = SubResource( 3 )
-anims/fall = SubResource( 4 )
-anims/idle = SubResource( 5 )
-anims/jump = SubResource( 6 )
-anims/jump_loop = SubResource( 7 )
-anims/run = SubResource( 8 )
+anims/attack = SubResource( 4 )
+anims/fall = SubResource( 5 )
+anims/idle = SubResource( 6 )
+anims/jump = SubResource( 7 )
+anims/jump_loop = SubResource( 8 )
+anims/run = SubResource( 9 )
 
 [node name="raycasts" type="Node2D" parent="."]
 position = Vector2( 0, 299.149 )
@@ -311,4 +322,6 @@ enabled = true
 [node name="raycast2" type="RayCast2D" parent="raycasts"]
 position = Vector2( -130.339, 0 )
 enabled = true
+[connection signal="area_entered" from="player_hitbox" to="." method="_on_player_hitbox_area_entered"]
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_entered" from="body/player_sword" to="body/player_sword" method="_on_player_sword_body_entered"]

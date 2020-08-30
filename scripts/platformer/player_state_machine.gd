@@ -81,13 +81,13 @@ func enter_state(new_state, old_state):
 		states.attack:
 			parent.direction = 0
 			parent.animator.play("attack")
-			yield(get_tree().create_timer(0.3), "timeout")
+			yield(get_tree().create_timer(0.5), "timeout")
 			parent.hurtbox.disabled = false
 
 
 
 func exit_state(old_state, new_state):
-	match state:
+	match old_state:
 		states.attack:
 			parent.hurtbox.disabled = true
 
