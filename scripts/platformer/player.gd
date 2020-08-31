@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 onready var animator = $player_animator
 onready var raycasts = $raycasts
 onready var body = $body
@@ -46,7 +45,6 @@ func handle_move_input():
 	body.scale.x = direction if not direction == 0 else body.scale.x
 
 
-
 func check_is_grounded():
 	for raycast in raycasts.get_children():
 		if raycast.is_colliding() and not raycast.get_collider().is_in_group("player"):
@@ -56,7 +54,7 @@ func check_is_grounded():
 
 func die():
 	queue_free()
-	scene_changer.change_scene("res://scenes/space/space.tscn")
+	scene_changer.change_scene("res://scenes/space/space.tscn", scene_changer.ABORT)
 
 
 func _on_player_hitbox_body_entered(enemy_body: Node) -> void:
@@ -68,7 +66,7 @@ func _on_player_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("coins"):
 		increase_score()
 		area.queue_free()
-		
+
 
 func increase_score():
 	global.score += 1

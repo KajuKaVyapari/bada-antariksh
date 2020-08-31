@@ -20,7 +20,6 @@ var can_enter_planet = false
 
 
 func _physics_process(_delta: float) -> void:
-
 	get_input()
 	set_animation()
 	velocity = velocity.linear_interpolate(direction * speed, .025)
@@ -29,28 +28,31 @@ func _physics_process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("enter_planet"):
-		scene_changer.change_scene("res://scenes/platformer/rooms/planet.tscn")
+		scene_changer.change_scene("res://scenes/platformer/rooms/planet.tscn", scene_changer.LOAD)
 
 
 func get_input():
 	look_at(get_global_mouse_position())
-	direction = Vector2(1, 0).rotated(rotation).normalized() if Input.is_action_pressed("up") else Vector2.ZERO
+	direction = (
+		Vector2(1, 0).rotated(rotation).normalized()
+		if Input.is_action_pressed("up")
+		else Vector2.ZERO
+	)
 
-	
-	
 
 func set_animation():
 	if direction == Vector2.ZERO and not particles.modulate == Color("#00ffffff"):
-		animator.play_backwards("engine")		
+		animator.play_backwards("engine")
 	elif not particles.modulate == Color("#ffffff"):
 		animator.play("engine")
-		
+
 
 func zoom(mode):
-
 	tween.interpolate_property(camera, "zoom", camera.zoom, zoom_values[mode], 2)
 	tween.start()
-	tween.interpolate_property(label, "modulate", label.modulate, Color("#ffffff") if mode == 1 else Color("#00ffffff"), 1)
+	tween.interpolate_property(
+		label, "modulate", label.modulate, Color("#ffffff") if mode == 1 else Color("#00ffffff"), 1
+	)
 	tween.start()
 
 	can_enter_planet = bool(mode)

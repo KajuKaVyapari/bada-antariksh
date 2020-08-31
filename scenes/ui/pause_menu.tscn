@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://resources/fonts/LeckerliOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/ui/base_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/ui/quit_button.gd" type="Script" id=3]
+[ext_resource path="res://scripts/ui/pause_menu.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.231373, 0.192157, 0.447059, 1 )
+corner_radius_top_left = 250
+corner_radius_top_right = 250
+expand_margin_left = 50.0
+expand_margin_right = 50.0
+expand_margin_top = 50.0
+expand_margin_bottom = 50.0
+
+[sub_resource type="DynamicFont" id=2]
+size = 150
+font_data = ExtResource( 1 )
+
+[node name="pause_menu" type="CanvasLayer"]
+pause_mode = 2
+layer = 3
+script = ExtResource( 4 )
+
+[node name="pause_title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -245.0
+margin_top = 273.047
+margin_right = 245.0
+margin_bottom = 475.047
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Paused"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume_button" parent="." instance=ExtResource( 2 )]
+margin_left = 739.687
+margin_top = 600.0
+margin_right = 1192.69
+margin_bottom = 705.0
+text = "Resume"
+script = null
+
+[node name="mainmenu_button" parent="." instance=ExtResource( 2 )]
+margin_left = 739.687
+margin_top = 750.0
+margin_right = 1192.69
+margin_bottom = 855.0
+text = "Main Menu"
+scene = "res://scenes/ui/main_menu.tscn"
+
+[node name="quit_button" parent="." instance=ExtResource( 2 )]
+margin_left = 740.0
+margin_top = 900.0
+margin_right = 1193.0
+margin_bottom = 1005.0
+text = "Quit"
+script = ExtResource( 3 )
+[connection signal="pressed" from="resume_button" to="." method="resume_game"]
+[connection signal="pressed" from="mainmenu_button" to="." method="resume_game"]
+[connection signal="pressed" from="quit_button" to="quit_button" method="_on_quit_button_pressed"]

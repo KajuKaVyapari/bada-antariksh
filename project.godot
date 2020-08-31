@@ -20,15 +20,19 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Bada Soch Space Game"
-run/main_scene="res://scenes/space/space.tscn"
-config/icon="res://icon.png"
+config/name="Bada Antariksh"
+run/main_scene="res://scenes/ui/main_menu.tscn"
+boot_splash/image="res://loading_screen.png"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
+config/icon="res://logo.png"
+config/windows_native_icon="res://logo.ico"
 
 [autoload]
 
 platformer_movement="*res://scripts/platformer/platformer_movement.gd"
 scene_changer="*res://scenes/scene_changer.tscn"
 global="*res://scripts/global.gd"
+pause_menu="*res://scenes/ui/pause_menu.tscn"
 
 [display]
 

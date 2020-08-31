@@ -16,7 +16,6 @@ var j = 0
 
 
 func _ready() -> void:
-
 	var i = 0
 
 	for space_planet in space_planets:
@@ -28,10 +27,14 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	minimap_player.rect_rotation = space_player.rotation_degrees + 90
-	
+
 	for space_planet in space_planets:
-		minimap_planets[j].get_node("planet").rect_scale = Vector2.ONE * space_planet.scale_multiplier
-		minimap_planets[j].position = (
-			((( space_planet.global_position - space_player.global_position).length() + 5120) * (space_planet.global_position - space_player.global_position).normalized()  ) / minimap_zoom ).clamped(110)
-		j +=1
+		minimap_planets[j].get_node("planet").rect_scale = (
+			Vector2.ONE
+			* space_planet.scale_multiplier
+		)
+		minimap_planets[j].position = ((((space_planet.global_position - space_player.global_position).length() + 5120) * (space_planet.global_position - space_player.global_position).normalized()) / minimap_zoom).clamped(
+			110
+		)
+		j += 1
 	j = 0

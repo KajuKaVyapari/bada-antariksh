@@ -1,6 +1,5 @@
 extends TileMap
 
-
 onready var rooms_node = get_parent().get_node("rooms")
 
 export var size = Vector2(3, 2)
@@ -16,11 +15,12 @@ var brain_room = preload("res://scenes/platformer/rooms/brain_room.tscn")
 var rooms = []
 var n = 0
 
+
 func _ready() -> void:
 	randomize()
 	spawn_rooms()
 	global.score = global.score
-			
+
 
 func get_coords(cell_location):
 	return map_to_world(cell_location) * 24
