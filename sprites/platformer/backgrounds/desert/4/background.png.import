@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background.png-e50240fa7fdd1f4d652e367eaa0432b8.stex"
+path="res://.import/background.png-150adf9e7154143da3fa4852af1ee490.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/platformer/autumn/elements/background.png"
-dest_files=[ "res://.import/background.png-e50240fa7fdd1f4d652e367eaa0432b8.stex" ]
+source_file="res://sprites/platformer/backgrounds/desert/4/background.png"
+dest_files=[ "res://.import/background.png-150adf9e7154143da3fa4852af1ee490.stex" ]
 
 [params]
 

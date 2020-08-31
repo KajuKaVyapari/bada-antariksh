@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/platformer/enemy_movement.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/platformer/rooms/room.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/platformer/enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/platformer/coin.tscn" type="PackedScene" id=5]
+
+[node name="room1" instance=ExtResource( 3 )]
+
+[node name="platformer_tileset" parent="." index="0"]
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 65536, 0, 0, 65547, 0, 0, 131072, 0, 0, 131083, 0, 0, 196608, 0, 0, 196610, 3, 0, 196611, 3, 0, 196612, 3, 0, 196613, 3, 0, 196614, 3, 0, 196618, 5, 0, 196619, 0, 0, 262144, 0, 0, 262153, 5, 0, 262154, 0, 0, 262155, 0, 0, 393223, 5, 0, 458752, 0, 0, 458753, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 458759, 3, 0, 458760, 3, 0, 458763, 0, 0, 524288, 0, 0, 524298, 5, 0, 524299, 0, 0, 589824, 0, 0, 589833, 5, 0, 589834, 0, 0, 589835, 0, 0, 655360, 0, 0, 655368, 5, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0 )
+
+[node name="coin" parent="." index="1" instance=ExtResource( 5 )]
+position = Vector2( 955.189, 1348.22 )
+
+[node name="coin2" parent="." index="2" instance=ExtResource( 5 )]
+position = Vector2( 296.985, 1326.53 )
+
+[node name="coin3" parent="." index="3" instance=ExtResource( 5 )]
+position = Vector2( 714.541, 325.296 )
+
+[node name="enemy" parent="." index="4" instance=ExtResource( 4 )]
+position = Vector2( 523.259, 302.642 )
+
+[node name="enemy2" parent="." index="5" instance=ExtResource( 4 )]
+position = Vector2( 526.087, 1337.85 )
+
+[node name="enemy_movement" parent="." index="6" instance=ExtResource( 2 )]
+position = Vector2( 856.332, 316.784 )
+
+[node name="enemy_movement2" parent="." index="7" instance=ExtResource( 2 )]
+position = Vector2( 288.499, 311.127 )
+
+[node name="enemy_movement3" parent="." index="8" instance=ExtResource( 2 )]
+position = Vector2( 617.404, 1354.82 )
+
+[node name="enemy_movement4" parent="." index="9" instance=ExtResource( 2 )]
+position = Vector2( 186.676, 1360.47 )

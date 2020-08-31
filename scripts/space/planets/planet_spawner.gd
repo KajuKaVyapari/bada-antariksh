@@ -21,6 +21,7 @@ func _ready() -> void:
 
 	randomize()
 	spawn_planets()
+	global.score = global.score
 
 
 func spawn_planets():

@@ -9,7 +9,7 @@ onready var hurtbox = $body/player_sword/player_hurtbox
 export var speed = 380
 export var acceleration = 0.2
 export var gravity = 20
-export var jump_power = 690
+export var jump_power = 750
 export var slope_stop = 64
 
 var direction = 0
@@ -17,6 +17,12 @@ var velocity = Vector2()
 
 var anim = "idle"
 var is_grounded = true
+var is_immune = true
+
+
+func _ready() -> void:
+	yield(get_tree().create_timer(3), "timeout")
+	is_immune = false
 
 
 func _physics_process(delta: float) -> void:
@@ -54,7 +60,7 @@ func die():
 
 
 func _on_player_hitbox_body_entered(enemy_body: Node) -> void:
-	if body.is_in_group("enemies"):
+	if enemy_body.is_in_group("enemies") and not is_immune:
 		die()
 
 

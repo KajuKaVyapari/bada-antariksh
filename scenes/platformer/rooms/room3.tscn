@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/platformer/enemy_movement.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/platformer/coin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/platformer/rooms/room.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/platformer/enemy.tscn" type="PackedScene" id=5]
+
+[node name="room3" instance=ExtResource( 4 )]
+
+[node name="platformer_tileset" parent="." index="0"]
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 458752, 0, 0, 458753, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 1, 0, 458759, 2, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 6, 0, 524295, 7, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 6, 0, 589831, 7, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 6, 0, 655367, 7, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0 )
+
+[node name="coin" parent="." index="1" instance=ExtResource( 3 )]
+position = Vector2( 1204.03, 838.279 )
+
+[node name="coin2" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 440.497, 830.27 )
+
+[node name="coin3" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( 779.547, 654.071 )
+
+[node name="enemy" parent="." index="4" instance=ExtResource( 5 )]
+position = Vector2( 325.701, 822.261 )
+
+[node name="enemy2" parent="." index="5" instance=ExtResource( 5 )]
+position = Vector2( 1236.06, 830.27 )
+
+[node name="enemy_movement" parent="." index="6" instance=ExtResource( 1 )]
+position = Vector2( 69.4117, 848.958 )
+
+[node name="enemy_movement2" parent="." index="7" instance=ExtResource( 1 )]
+position = Vector2( 573.981, 832.94 )
+
+[node name="enemy_movement3" parent="." index="8" instance=ExtResource( 1 )]
+position = Vector2( 942.397, 840.949 )
+
+[node name="enemy_movement4" parent="." index="9" instance=ExtResource( 1 )]
+position = Vector2( 1470.99, 830.27 )

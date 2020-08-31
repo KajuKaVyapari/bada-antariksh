@@ -32,6 +32,7 @@ tracks/1/keys = {
 }
 
 [node name="scene_changer" type="CanvasLayer"]
+layer = 2
 script = ExtResource( 2 )
 
 [node name="anim" type="Control" parent="."]

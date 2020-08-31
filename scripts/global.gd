@@ -10,7 +10,6 @@ func is_last_planet():
 
 func set_score(value):
 	score = value
-	print(get_node("/root/planet"))
 	
 	get_tree().get_nodes_in_group("ui_coins")[0].text = "x " + str(score)
 

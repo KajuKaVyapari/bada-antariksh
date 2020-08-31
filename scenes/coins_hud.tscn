@@ -7,7 +7,7 @@
 size = 100
 font_data = ExtResource( 2 )
 
-[node name="coins" type="Node2D"]
+[node name="coins_hud" type="Node2D"]
 position = Vector2( 25, 25 )
 
 [node name="coins_texture" type="TextureRect" parent="."]

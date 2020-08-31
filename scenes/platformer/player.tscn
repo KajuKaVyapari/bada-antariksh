@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_006.png" type="Texture" id=1]
 [ext_resource path="res://sprites/platformer/player/idle/0_golem_idle_003.png" type="Texture" id=2]
@@ -63,6 +63,7 @@
 [ext_resource path="res://sprites/platformer/player/falling_down/0_golem_falling_down_005.png" type="Texture" id=61]
 [ext_resource path="res://scripts/platformer/player_sword.gd" type="Script" id=62]
 [ext_resource path="res://scripts/platformer/player_state_machine.gd" type="Script" id=63]
+[ext_resource path="res://scenes/coins_hud.tscn" type="PackedScene" id=64]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 125.583, 264.272 )
@@ -78,25 +79,25 @@ animations = [ {
 "name": "idle",
 "speed": 17.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 9 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "attack",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 37 ) ],
 "loop": true,
 "name": "run",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 5 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 22 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "jump",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 41 ), ExtResource( 33 ), ExtResource( 9 ), ExtResource( 34 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "attack",
 "speed": 15.0
 }, {
 "frames": [ ExtResource( 58 ), ExtResource( 57 ), ExtResource( 59 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 61 ) ],
 "loop": true,
 "name": "fall",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 42 ), ExtResource( 5 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 22 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "jump",
-"speed": 15.0
 } ]
 
 [sub_resource type="Animation" id=4]
@@ -276,13 +277,15 @@ script = ExtResource( 63 )
 
 [node name="player_camera" type="Camera2D" parent="."]
 current = true
+drag_margin_v_enabled = true
+drag_margin_top = 0.25
+editor_draw_drag_margin = true
 
 [node name="player_collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 42.3785 )
 shape = SubResource( 1 )
 
 [node name="player_hitbox" type="Area2D" parent="."]
-scale = Vector2( 1, 1 )
 
 [node name="player_hitbox_collider" type="CollisionShape2D" parent="player_hitbox"]
 position = Vector2( 0, 38.6492 )
@@ -322,6 +325,10 @@ enabled = true
 [node name="raycast2" type="RayCast2D" parent="raycasts"]
 position = Vector2( -130.339, 0 )
 enabled = true
+
+[node name="ui" type="CanvasLayer" parent="."]
+
+[node name="coins_hud" parent="ui" instance=ExtResource( 64 )]
 [connection signal="area_entered" from="player_hitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_entered" from="body/player_sword" to="body/player_sword" method="_on_player_sword_body_entered"]
