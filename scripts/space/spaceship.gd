@@ -6,7 +6,7 @@ onready var camera = $spaceship_camera
 onready var tween = $spaceship_tween
 onready var label = $hud/enter_label
 
-export var speed = 1000
+export var speed = 2200
 
 var direction = Vector2()
 var velocity = Vector2()
@@ -22,22 +22,22 @@ var can_enter_planet = false
 func _physics_process(_delta: float) -> void:
 	get_input()
 	set_animation()
-	velocity = velocity.linear_interpolate(direction * speed, .025)
+	velocity = velocity.linear_interpolate(direction * speed, .005)
 	velocity = move_and_slide(velocity)
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("enter_planet"):
+	if event.is_action_pressed("enter_planet") and can_enter_planet:
 		scene_changer.change_scene("res://scenes/platformer/rooms/planet.tscn", scene_changer.LOAD)
 
 
 func get_input():
 	look_at(get_global_mouse_position())
-	direction = (
-		Vector2(1, 0).rotated(rotation).normalized()
-		if Input.is_action_pressed("up")
-		else Vector2.ZERO
-	)
+	if Input.is_action_pressed("up"):
+		direction = Vector2(1, 0).rotated(rotation).normalized()
+	else:
+		direction = Vector2.ZERO
+	
 
 
 func set_animation():

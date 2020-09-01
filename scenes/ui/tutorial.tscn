@@ -1,0 +1,281 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://sprites/space/space_background.png" type="Texture" id=1]
+[ext_resource path="res://resources/tutorialfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/tab_fg.tres" type="StyleBox" id=3]
+[ext_resource path="res://resources/tab_bg.tres" type="StyleBox" id=4]
+[ext_resource path="res://resources/fonts/Monaco.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://resources/controls_list_bg.tres" type="StyleBox" id=6]
+[ext_resource path="res://resources/fonts/GrandHotel-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://resources/tut_tab_fg.tres" type="StyleBox" id=8]
+[ext_resource path="res://sprites/space/spaceship.png" type="Texture" id=9]
+[ext_resource path="res://resources/fonts/EastSeaDokdo-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://sprites/space/planet_1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/platformer/autumn/elements/coin.png" type="Texture" id=12]
+[ext_resource path="res://sprites/platformer/alien-ufo-pack/png/shipgreen_manned.png" type="Texture" id=13]
+[ext_resource path="res://sprites/platformer/brain.png" type="Texture" id=14]
+[ext_resource path="res://resources/tutorial_text_small.tres" type="DynamicFont" id=15]
+[ext_resource path="res://sprites/platformer/launch_pad.png" type="Texture" id=16]
+[ext_resource path="res://resources/tutorial_text_font.tres" type="DynamicFont" id=17]
+[ext_resource path="res://scenes/ui/base_button.tscn" type="PackedScene" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 50.0
+content_margin_right = 50.0
+bg_color = Color( 0.254902, 0.494118, 0.752941, 1 )
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+expand_margin_left = 25.0
+expand_margin_right = 25.0
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 120
+font_data = ExtResource( 10 )
+
+[node name="tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.00012207
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_styles/tab_fg = ExtResource( 3 )
+custom_styles/tab_bg = ExtResource( 4 )
+custom_styles/panel = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_bg = Color( 0, 0.0196078, 0.227451, 1 )
+custom_colors/font_color_fg = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 79.0
+drag_to_rearrange_enabled = true
+
+[node name="ItemList" type="ItemList" parent="TabContainer/Controls"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -500.5
+margin_right = 960.0
+margin_bottom = 499.5
+custom_styles/bg = ExtResource( 6 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/guide_color = Color( 1, 1, 1, 0 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+items = [ "Move", null, false, ": WASD", null, false, "Jump", null, false, ": Space", null, false, "Attack", null, false, ": Left Click", null, false, "Interact", null, false, ": E", null, false, "Pause", null, false, ": Escape", null, false ]
+max_columns = 2
+fixed_column_width = 800
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 79.0
+
+[node name="tutorial" type="TabContainer" parent="TabContainer/Tutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 94.0
+custom_styles/tab_fg = ExtResource( 8 )
+custom_styles/tab_bg = SubResource( 3 )
+custom_styles/panel = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Space" type="Tabs" parent="TabContainer/Tutorial/tutorial"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 52.0
+
+[node name="spaceship" type="TextureRect" parent="TabContainer/Tutorial/tutorial/Space"]
+margin_left = 40.0
+margin_top = 144.0
+margin_right = 264.0
+margin_bottom = 576.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="planet" type="TextureRect" parent="TabContainer/Tutorial/tutorial/Space"]
+margin_left = 1136.0
+margin_top = -2.00003
+margin_right = 1916.0
+margin_bottom = 778.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="RichTextLabel" parent="TabContainer/Tutorial/tutorial/Space"]
+margin_left = 292.0
+margin_top = 138.0
+margin_right = 1337.0
+margin_bottom = 777.0
+custom_fonts/normal_font = ExtResource( 17 )
+text = "You man a spaceship. It is your duty to explore the universe, capture the planets, and get the Bada Dimaag(Big Brain) to be able to Bada Soch.  (Think Big)."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Planet" type="Tabs" parent="TabContainer/Tutorial/tutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 52.0
+
+[node name="big_brain" type="TextureRect" parent="TabContainer/Tutorial/tutorial/Planet"]
+margin_left = 799.136
+margin_top = 104.341
+margin_right = 1074.14
+margin_bottom = 379.341
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="TabContainer/Tutorial/tutorial/Planet/big_brain"]
+margin_left = -727.0
+margin_top = 28.0
+margin_right = 2.0
+margin_bottom = 214.0
+custom_fonts/font = ExtResource( 15 )
+text = "You have to collect the Bada Dimaag to capture the planet."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="alien" type="TextureRect" parent="TabContainer/Tutorial/tutorial/Planet"]
+margin_left = 750.943
+margin_top = 394.68
+margin_right = 912.943
+margin_bottom = 555.68
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="TabContainer/Tutorial/tutorial/Planet/alien"]
+margin_left = -497.0
+margin_top = 53.0
+margin_right = -45.0
+margin_bottom = 134.0
+custom_fonts/font = ExtResource( 15 )
+text = "Beware of aliens."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="TextureRect" parent="TabContainer/Tutorial/tutorial/Planet"]
+margin_left = 628.669
+margin_top = 624.699
+margin_right = 767.669
+margin_bottom = 762.699
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="TabContainer/Tutorial/tutorial/Planet/coin"]
+margin_left = -437.67
+margin_top = 31.8108
+margin_right = -129.67
+margin_bottom = 112.811
+custom_fonts/font = ExtResource( 15 )
+text = "Collect coins."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="launch_pad" type="TextureRect" parent="TabContainer/Tutorial/tutorial/Planet"]
+margin_left = 1472.29
+margin_top = 381.156
+margin_right = 1833.29
+margin_bottom = 481.156
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="TabContainer/Tutorial/tutorial/Planet/launch_pad"]
+margin_left = -385.364
+margin_top = -28.9541
+margin_right = -47.3635
+margin_bottom = 136.046
+custom_fonts/font = ExtResource( 15 )
+text = "Bounce on the launch pads."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="Label" parent="TabContainer/Tutorial/tutorial/Planet"]
+margin_left = 795.634
+margin_top = 566.495
+margin_right = 1873.63
+margin_bottom = 811.495
+custom_fonts/font = SubResource( 6 )
+text = "Capture all planets to win !
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="base_button" parent="." instance=ExtResource( 18 )]
+margin_left = 1482.63
+margin_top = 942.916
+margin_right = 1823.63
+margin_bottom = 1047.92
+text = "Return"
+scene = "res://scenes/ui/main_menu.tscn"

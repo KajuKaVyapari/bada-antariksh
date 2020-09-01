@@ -5,40 +5,35 @@
 [ext_resource path="res://scenes/platformer/rooms/room.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/platformer/enemy.tscn" type="PackedScene" id=5]
 
-[node name="room4" instance=ExtResource( 4 )]
+[node name="room" instance=ExtResource( 4 )]
 
 [node name="platformer_tileset" parent="." index="0"]
-tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 65536, 0, 0, 65547, 0, 0, 131072, 0, 0, 131083, 0, 0, 196608, 0, 0, 196619, 0, 0, 262144, 0, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262151, 3, 0, 262152, 3, 0, 262154, 3, 0, 262155, 0, 0, 327686, 5, 0, 393221, 5, 0, 458752, 0, 0, 458755, 3, 0, 458756, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458763, 0, 0, 524288, 0, 0, 524289, 4, 0, 524299, 0, 0, 589824, 0, 0, 589826, 4, 0, 589835, 0, 0, 655360, 0, 0, 655363, 4, 0, 655371, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 65536, 0, 0, 65547, 0, 0, 131072, 0, 0, 131083, 0, 0, 196608, 0, 0, 196619, 0, 0, 262144, 0, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 0, 0, 458752, 0, 0, 458754, 3, 0, 458756, 3, 0, 458759, 3, 0, 458761, 3, 0, 458763, 0, 0, 524288, 0, 0, 524299, 0, 0, 589824, 0, 0, 589825, 4, 0, 589834, 5, 0, 589835, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 4, 0, 655369, 5, 0, 655370, 0, 0, 655371, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0 )
 
 [node name="coin" parent="." index="1" instance=ExtResource( 2 )]
-position = Vector2( 1236.57, 1300.71 )
+position = Vector2( 1170.97, 472.347 )
 
 [node name="coin2" parent="." index="2" instance=ExtResource( 2 )]
-position = Vector2( 972.861, 766.173 )
+position = Vector2( 384.666, 472.347 )
 
-[node name="coin3" parent="." index="3" instance=ExtResource( 2 )]
-position = Vector2( 1343.47, 399.122 )
+[node name="enemy" parent="." index="3" instance=ExtResource( 5 )]
+position = Vector2( 774.989, 443.659 )
 
-[node name="coin4" parent="." index="4" instance=ExtResource( 2 )]
-position = Vector2( 342.105, 424.068 )
+[node name="enemy2" parent="." index="4" instance=ExtResource( 5 )]
+position = Vector2( 774.989, 1342.13 )
 
-[node name="coin5" parent="." index="5" instance=ExtResource( 2 )]
-position = Vector2( 497.68, 697.451 )
+[node name="enemy_movement" parent="." index="5" instance=ExtResource( 1 )]
+position = Vector2( 1352.47, 444.472 )
+scale = Vector2( 0.15, 0.15 )
 
-[node name="enemy" parent="." index="6" instance=ExtResource( 5 )]
-position = Vector2( 488.212, 446.74 )
+[node name="enemy_movement2" parent="." index="6" instance=ExtResource( 1 )]
+position = Vector2( 203.187, 441.297 )
+scale = Vector2( 0.15, 0.15 )
 
-[node name="enemy2" parent="." index="7" instance=ExtResource( 5 )]
-position = Vector2( 1083.33, 1325.66 )
+[node name="enemy_movement3" parent="." index="7" instance=ExtResource( 1 )]
+position = Vector2( 1114.36, 1342.94 )
+scale = Vector2( 0.15, 0.15 )
 
-[node name="enemy_movement" parent="." index="8" instance=ExtResource( 1 )]
-position = Vector2( 1343.48, 445.449 )
-
-[node name="enemy_movement2" parent="." index="9" instance=ExtResource( 1 )]
-position = Vector2( 192.434, 445.449 )
-
-[node name="enemy_movement3" parent="." index="10" instance=ExtResource( 1 )]
-position = Vector2( 1350.6, 1336.35 )
-
-[node name="enemy_movement4" parent="." index="11" instance=ExtResource( 1 )]
-position = Vector2( 637.884, 1314.97 )
+[node name="enemy_movement4" parent="." index="8" instance=ExtResource( 1 )]
+position = Vector2( 425.424, 1346.12 )
+scale = Vector2( 0.15, 0.15 )

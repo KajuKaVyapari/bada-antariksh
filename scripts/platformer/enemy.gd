@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 onready var sprite = $enemy_sprite
+onready var death_particles = $death_particles
 
-export var speed = 200
+export var speed = 250
 export var acceleration = .2
 
 var direction = 1
@@ -19,6 +20,7 @@ var sprites = [
 
 func _ready() -> void:
 	randomize()
+	speed *= rand_range(0.8, 2)
 	sprite.texture = sprites[randi() % sprites.size()]
 
 
@@ -34,3 +36,13 @@ func _on_enemy_area_area_entered(area: Area2D) -> void:
 func move():
 	velocity.x = lerp(velocity.x, direction * speed, acceleration)
 	velocity = move_and_slide(velocity)
+
+
+func die():
+	direction = 0
+	velocity = Vector2.ZERO
+	sprite.visible = false
+	death_particles.emitting = true
+	sounds.get_node("damage_effect").play()
+	yield(get_tree().create_timer((0.5)), "timeout")
+	queue_free()

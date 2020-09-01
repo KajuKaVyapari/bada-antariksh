@@ -32,7 +32,10 @@ func set_paused(value):
 	else:
 		pause_game()
 
-	
+
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel") and ["planet", "space"].has(get_tree().get_current_scene().get_name()):
+	if (
+		event.is_action_pressed("ui_cancel")
+		and ["planet", "space"].has(get_tree().get_current_scene().get_name())
+	):
 		self.paused = not paused

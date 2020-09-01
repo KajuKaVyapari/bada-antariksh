@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://intro.webm" type="VideoStream" id=1]
+[ext_resource path="res://scenes/ui/base_button.tscn" type="PackedScene" id=2]
+
+[node name="intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="intro_player" type="VideoPlayer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="base_button" parent="." instance=ExtResource( 2 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -424.155
+margin_top = -160.437
+margin_right = -83.1545
+margin_bottom = -55.4365
+text = "Return"
+scene = "res://scenes/ui/main_menu.tscn"

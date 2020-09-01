@@ -43,9 +43,9 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -438.0
-margin_top = 183.525
+margin_top = 135.648
 margin_right = 1196.0
-margin_bottom = 985.525
+margin_bottom = 937.648
 rect_rotation = -10.0
 rect_scale = Vector2( 0.5, 0.5 )
 custom_styles/normal = SubResource( 1 )
@@ -63,24 +63,32 @@ __meta__ = {
 
 [node name="play_button" parent="." instance=ExtResource( 3 )]
 margin_left = 800.0
-margin_top = 650.0
+margin_top = 507.163
 margin_right = 1141.0
-margin_bottom = 755.0
+margin_bottom = 612.163
 scene = "res://scenes/space/space.tscn"
+
+[node name="play_button2" parent="." instance=ExtResource( 3 )]
+margin_left = 633.69
+margin_top = 657.163
+margin_right = 1404.69
+margin_bottom = 762.163
+text = "Watch Intro Video"
+scene = "res://scenes/ui/intro.tscn"
 
 [node name="tutorial_button" parent="." instance=ExtResource( 3 )]
 margin_left = 800.0
-margin_top = 800.0
+margin_top = 807.163
 margin_right = 1141.0
-margin_bottom = 905.0
+margin_bottom = 912.163
 text = "Tutorial"
-scene = "res://scenes/space/space.tscn"
+scene = "res://scenes/ui/tutorial.tscn"
 
 [node name="quit_button" parent="." instance=ExtResource( 3 )]
 margin_left = 800.0
-margin_top = 950.0
+margin_top = 957.163
 margin_right = 1141.0
-margin_bottom = 1055.0
+margin_bottom = 1062.16
 text = "Quit"
 script = ExtResource( 4 )
 [connection signal="pressed" from="quit_button" to="quit_button" method="_on_quit_button_pressed"]

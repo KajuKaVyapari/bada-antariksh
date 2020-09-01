@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/space/space_background.png" type="Texture" id=1]
+[ext_resource path="res://resources/fonts/LeckerliOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/coins_hud.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/base_button.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 2 )
+
+[node name="win_screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_top = 0.0020787
+anchor_right = 1.0
+anchor_bottom = 1.00208
+margin_right = 0.00012207
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -547.0
+margin_top = -319.032
+margin_right = 547.0
+margin_bottom = 125.968
+custom_fonts/font = SubResource( 1 )
+text = "You Win!
+All Planets Captured!
+You now have Bada Dimaag.
+You can now Bada Soch :)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coins_hud" parent="." instance=ExtResource( 3 )]
+position = Vector2( 855.622, 752.355 )
+
+[node name="base_button" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -197.439
+margin_top = 365.77
+margin_right = 255.561
+margin_bottom = 470.77
+text = "Main Menu"
+scene = "res://scenes/ui/main_menu.tscn"

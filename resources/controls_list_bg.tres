@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxTexture" format=2]
+
+[resource]
+content_margin_left = 100.0
+content_margin_right = 100.0
+content_margin_top = 250.0
+content_margin_bottom = 250.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

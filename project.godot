@@ -33,6 +33,7 @@ platformer_movement="*res://scripts/platformer/platformer_movement.gd"
 scene_changer="*res://scenes/scene_changer.tscn"
 global="*res://scripts/global.gd"
 pause_menu="*res://scenes/ui/pause_menu.tscn"
+sounds="*res://scenes/sounds.tscn"
 
 [display]
 
@@ -40,6 +41,7 @@ window/size/width=1920
 window/size/height=1080
 window/size/borderless=true
 window/size/fullscreen=true
+window/stretch/mode="2d"
 
 [input]
 

@@ -2,13 +2,19 @@ extends TileMap
 
 onready var rooms_node = get_parent().get_node("rooms")
 
-export var size = Vector2(3, 2)
+export var size = Vector2(2, 2)
 
 var possible_rooms = [
 	preload("res://scenes/platformer/rooms/room1.tscn"),
 	preload("res://scenes/platformer/rooms/room2.tscn"),
 	preload("res://scenes/platformer/rooms/room3.tscn"),
 	preload("res://scenes/platformer/rooms/room4.tscn"),
+	preload("res://scenes/platformer/rooms/room5.tscn"),
+	preload("res://scenes/platformer/rooms/room6.tscn"),
+	preload("res://scenes/platformer/rooms/room7.tscn"),
+	preload("res://scenes/platformer/rooms/room8.tscn"),
+	preload("res://scenes/platformer/rooms/room9.tscn"),
+	preload("res://scenes/platformer/rooms/room10.tscn"),
 ]
 var brain_room = preload("res://scenes/platformer/rooms/brain_room.tscn")
 
@@ -29,7 +35,7 @@ func get_coords(cell_location):
 func spawn_rooms():
 	for i in size.x:
 		for j in size.y:
-			if not Vector2(i, j) == Vector2(2, 1):
+			if not Vector2(i, j) == size - Vector2(1, 1):
 				rooms.push_back(possible_rooms[randi() % possible_rooms.size()].instance())
 			else:
 				rooms.push_back(brain_room.instance())

@@ -4,6 +4,7 @@ onready var animator = $player_animator
 onready var raycasts = $raycasts
 onready var body = $body
 onready var hurtbox = $body/player_sword/player_hurtbox
+onready var death_particles = $death_particles
 
 export var speed = 380
 export var acceleration = 0.2
@@ -53,17 +54,20 @@ func check_is_grounded():
 
 
 func die():
-	queue_free()
+	death_particles.emitting = true
+	yield(get_tree().create_timer(0.5), "timeout")
 	scene_changer.change_scene("res://scenes/space/space.tscn", scene_changer.ABORT)
 
 
 func _on_player_hitbox_body_entered(enemy_body: Node) -> void:
 	if enemy_body.is_in_group("enemies") and not is_immune:
+		sounds.get_node("damage_effect").play()
 		die()
 
 
 func _on_player_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("coins"):
+		sounds.get_node("coin_effect").play()
 		increase_score()
 		area.queue_free()
 

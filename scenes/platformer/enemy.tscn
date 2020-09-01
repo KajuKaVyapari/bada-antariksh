@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/platformer/enemy.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 80.0
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 200.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 25.0
+color = Color( 0.392157, 0.752941, 0.87451, 1 )
 
 [node name="enemy" type="KinematicBody2D" groups=[
 "enemies",
@@ -20,4 +31,14 @@ shape = SubResource( 1 )
 
 [node name="enemy_collider" type="CollisionShape2D" parent="enemy_area"]
 shape = SubResource( 1 )
+
+[node name="death_particles" type="Particles2D" parent="."]
+position = Vector2( 0, 0.853554 )
+emitting = false
+amount = 64
+lifetime = 0.5
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.9
+process_material = SubResource( 2 )
 [connection signal="area_entered" from="enemy_area" to="." method="_on_enemy_area_area_entered"]
