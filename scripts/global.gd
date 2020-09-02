@@ -1,6 +1,6 @@
 extends Node
 
-var original_planets = 1
+var original_planets = 8
 var score = 0 setget set_score
 var planets = original_planets
 
